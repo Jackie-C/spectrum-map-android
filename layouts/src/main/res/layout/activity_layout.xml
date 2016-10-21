@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:weightSum="10"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="4"
     android:orientation="vertical"
     android:background="#4F7AE8"
     android:gravity="center">
@@ -10,98 +10,117 @@
     <LinearLayout
         android:layout_weight="3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="horizontal"
         android:background="#4F7AE8"
         android:weightSum="2">
 
         <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical">
 
             <Button
-                android:layout_marginBottom="7.5dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="7.5dp"
-                android:layout_weight="0.5"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="3.5dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
                 android:background="#E7BE56"
                 android:textColor="#000000"
-                android:textSize="20dp"
-                android:text="POST /spectrum"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:onClick="postSpectrum"/>
-
-            <Button
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="7.5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="7.5dp"
-                android:layout_weight="0.5"
-                android:background="#E7BE56"
-                android:textColor="#000000"
-                android:textSize="20dp"
-                android:text="POST /location"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:onClick="postLocation"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:layout_marginBottom="7.5dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="7.5dp"
-                android:layout_marginRight="15dp"
-                android:layout_weight="0.5"
-                android:background="#E7BE56"
-                android:textColor="#000000"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:text="GET /spectrum"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:onClick="getSpectrum"/>
-
             <Button
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="7.5dp"
-                android:layout_marginLeft="7.5dp"
-                android:layout_marginRight="15dp"
-                android:layout_weight="0.5"
+                android:layout_marginTop="3.5dp"
+                android:layout_marginBottom="3.5dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
                 android:background="#E7BE56"
                 android:textColor="#000000"
-                android:textSize="20dp"
+                android:textSize="18dp"
+                android:text="POST /spectrum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="postSpectrum"/>
+            <Button
+                android:layout_marginTop="3.5dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:background="#E7BE56"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:text="DELETE /spectrum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="deleteSpectrum"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="3.5dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:background="#E7BE56"
+                android:textColor="#000000"
+                android:textSize="18dp"
                 android:text="GET /location"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:onClick="getLocation"/>
-
+            <Button
+                android:layout_marginTop="3.5dp"
+                android:layout_marginBottom="3.5dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:background="#E7BE56"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:text="POST /location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="postLocation"/>
+            <Button
+                android:layout_marginTop="3.5dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
+                android:background="#E7BE56"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:text="DELETE /location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="deleteLocation"/>
         </LinearLayout>
     </LinearLayout>
+
     <LinearLayout
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#4F7AE8">
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="15dp">
+            android:layout_marginBottom="7dp">
 
             <TextView
                 android:id="@+id/responseBox"
                 android:layout_marginTop="0dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginRight="7dp"
                 android:background="#D2D5DB"
                 android:scrollbars="vertical"
                 android:layout_width="match_parent"

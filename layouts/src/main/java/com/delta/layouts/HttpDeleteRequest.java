@@ -6,7 +6,8 @@ import android.util.Log;
 import android.widget.TextView;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.BufferedReader;
@@ -17,16 +18,21 @@ import java.net.URI;
  * Created by Jackie on 19/10/2016.
  */
 
-public class HttpGetRequest extends AsyncTask<String, Void, String> {
+public class HttpDeleteRequest extends AsyncTask<String, Void, String> {
 
     private TextView httpBody;
     private String path;
+    private String queryString;
 
     public void setPath(String path) {
         this.path = path;
     }
 
-    public HttpGetRequest(Activity myContext)
+    public void setQueryString(String queryString) {
+        this.queryString = queryString;
+    }
+
+    public HttpDeleteRequest(Activity myContext)
     {
         httpBody = (TextView) myContext.findViewById(R.id.responseBox);
     }
@@ -53,10 +59,13 @@ public class HttpGetRequest extends AsyncTask<String, Void, String> {
         String responseData = null;
         DefaultHttpClient httpClient = new DefaultHttpClient();
         try {
-            URI destination = new URI("http", null, "ec2-52-64-226-30.ap-southeast-2.compute.amazonaws.com", 9000, path, null, null);
-            HttpGet getRequest = new HttpGet();
-            getRequest.setURI(destination);
-            HttpResponse response = httpClient.execute(getRequest);
+            URI destination = new URI("http", null, "ec2-52-64-226-30.ap-southeast-2.compute.amazonaws.com", 9000, path, queryString, null);
+            HttpPost deleteRequest = new HttpPost();
+            deleteRequest.setURI(destination);
+            StringEntity se = new StringEntity("");
+            se.setContentType("text/plain");
+            deleteRequest.setEntity(se);
+            HttpResponse response = httpClient.execute(deleteRequest);
 
             br = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
             StringBuffer buffer = new StringBuffer("");

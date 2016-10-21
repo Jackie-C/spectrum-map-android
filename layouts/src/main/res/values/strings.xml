@@ -4,5 +4,8 @@
     <string name="app_name">Spectrum Map Test Data Loader</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="enterBatchID">Please enter the BATCH ID to delete:</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
